@@ -23,15 +23,48 @@ if __name__ == "__main__":
     # 初始化数据处理器
     processor = DataProcessor(spectra, y)
     
-    # 加载并分割数据集为训练集和测试集
-    processor.load_and_split_data(train_size=0.75, test_size=0.25, random_state=42)
+        # 定义数据划分配置 - 使用字典形式
+    split_config = {
+        'methods': [
+            {'name': 'random', 'params': {'test_size': 0.25, 'random_state': 42}},
+            {'name': 'spxy', 'params': {'test_size': 0.25}},
+            {'name': 'kennard-stone', 'params': {'test_size': 0.25}}
+        ],
+        'active_method': 'kennard-stone'  # 指定要使用的数据划分方法
+    }
     
+    # 根据配置加载并分割数据集
+    for method_entry in split_config['methods']:
+        method_name = method_entry['name']
+        method_params = method_entry['params']
+        
+        if method_name == split_config['active_method']:
+            print(f"使用数据划分方法: {method_name}")
+            
+            if method_name == 'random':
+                processor.load_and_split_data(
+                    method='random',
+                    test_size=method_params['test_size'],
+                    random_state=method_params['random_state']
+                )
+            elif method_name == 'spxy':
+                processor.load_and_split_data(
+                    method='spxy',
+                    test_size=method_params['test_size']
+                )
+            elif method_name == 'kennard-stone':
+                processor.load_and_split_data(
+                    method='kennard-stone',
+                    test_size=method_params['test_size']
+                )
+            break
+
     # 定义预处理和特征选择方法
-    preprocess_methods = ['airPLS']
-    feature_selection_methods = ['uve']  # 确保是列表类型
+    preprocess_methods = ['derivative']  # 可以添加其他预处理方法
+    feature_selection_methods = ['uniform_sampling']  # 确保是列表类型
     
-    # 对于uniform_sampling方法，需要定义采样数目
-    count = 10  
+    # 定义采样数目
+    count = 200  
     
     # 处理数据
     processed_data = {}
@@ -59,8 +92,18 @@ if __name__ == "__main__":
         print("应用Savitzky-Golay平滑滤波...")
         processed_X_cal = processor.perform_savgol(processed_X_cal)
         processed_X_test = processor.perform_savgol(processed_X_test)
+
+    if 'detrend' in preprocess_methods:
+        print("应用去趋势...")
+        processed_X_cal = processor.perform_detrend(processed_X_cal)
+        processed_X_test = processor.perform_detrend(processed_X_test)
+
+    if 'derivative' in preprocess_methods:
+        print("一阶微分")
+        processed_X_cal = processor.spectral_first_order_derivative(processed_X_cal)
+        processed_X_test = processor.spectral_first_order_derivative(processed_X_test)
     
-    # 应用特征选择方法 - 关键修改在这里
+    # 应用特征选择方法
     for method in feature_selection_methods:
         if method == 'uniform_sampling':
             print(f"应用均匀采样 (count={count})...")
@@ -178,14 +221,15 @@ if __name__ == "__main__":
             
             # 评估
             mse = mean_squared_error(y_test, y_pred)
+            rmse = np.sqrt(mse)
             r2 = r2_score(y_test, y_pred)
             
             # 存储结果
             predictions[model_name].append(y_pred)
-            mse_results[model_name].append(mse)
+            rmse_results[model_name].append(mse)
             r2_results[model_name].append(r2)
             
-            print(f"方法: {method_name}, 模型: {model_name}, 最佳参数: {best_params[model_name][-1]}, MSE: {mse:.4f}, R²: {r2:.4f}")
+            print(f"方法: {method_name}, 模型: {model_name}, 最佳参数: {best_params[model_name][-1]}, RMSE: {rmse:.4f}, R²: {r2:.4f}")
             
             # 可视化预测结果与真实值的对比
             plt.figure(figsize=(8, 6))
@@ -228,10 +272,10 @@ if __name__ == "__main__":
     print("\n最终模型性能评估:")
     for model_name in models.keys():
         print(f"\n模型: {model_name}")
-        print(f"{'方法':<25}{'最佳参数':<45}{'MSE':<15}{'R²':<10}")
+        print(f"{'方法':<25}{'最佳参数':<45}{'RMSE':<15}{'R²':<10}")
         for i, method_name in enumerate(processed_data.keys()):
             params = best_params[model_name][i]
-            mse = mse_results[model_name][i]
+            rmse = rmse_results[model_name][i]
             r2 = r2_results[model_name][i]
-            print(f"{method_name:<25}{str(params):<45}{mse:<15.4f}{r2:<10.4f}")
+            print(f"{method_name:<25}{str(params):<45}{rmse:<15.4f}{r2:<10.4f}")
 
