@@ -56,7 +56,7 @@ An example of modelling and prediction：
 
     ```python
     from tabpfn import TabPFNRegressor
-    
+
     model = TabPFNRegressor(device=device, random_state=42, ignore_pretraining_limits=True)
     model.fit(X_train_rfe, y_train)
     ```
