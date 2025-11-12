@@ -9,11 +9,11 @@ We developed a method for Near-Infrared Spectral Analysis.This is a supervised m
 ***
 * Official installation of TabPFN (pip)
 
-   pip install tabpfn
-   
+    pip install tabpfn
+
 The entire process of this experiment was implemented in Python 3.12.9.TabPFN requires Python 3.9+ due to newer language features. 
 * Compatible versions: 3.9, 3.10, 3.11, 3.12, 3.13.
-For further details regarding the installation and configuration of TabPFN, please refer to [TabPFN](https://github.com/PriorLabs/TabPFN).
+  For further details regarding the installation and configuration of TabPFN, please refer to [TabPFN](https://github.com/PriorLabs/TabPFN).
 
 # Workflow
 ***
@@ -31,22 +31,22 @@ We consolidates several commonly used spectral preprocessing and feature selecti
 * Feature Selection:SPA,Univariate,UVE,RFE
 An example of data processing：
 
+    from feature import rfe
+    from process import derivative
 
-  from feature import rfe
-  from process import derivative
-
-  #Load the data
-  ...Loading your sprectral data
+    #Load the data
+    
+    ...Loading your sprectral data
   
-  #Data partitioning
-  X_train, X_test, y_train, y_test = train_test_split(spectra, y, test_size=0.25, random_state=42, shuffle=True)
+    #Data partitioning
+    X_train, X_test, y_train, y_test = train_test_split(spectra, y, test_size=0.25, random_state=42, shuffle=True)
   
-  #Spectral preprocessing
-  X_train_de = derivative(X_train)
-  X_test_de = derivative(X_test)
+    #Spectral preprocessing
+    X_train_de = derivative(X_train)
+    X_test_de = derivative(X_test)
   
-  #Feature Selection
-  X_train_rfe, X_test_rfe = rfe(X_train_de, y_train, X_test_de)
+    #Feature Selection
+    X_train_rfe, X_test_rfe = rfe(X_train_de, y_train, X_test_de)
   
 
     
