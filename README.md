@@ -9,16 +9,16 @@ We developed a method for Near-Infrared Spectral Analysis.This is a supervised m
 ***
 * Official installation of TabPFN (pip)
 
-
-    pip install tabpfn
+    ```pythonpip install tabpfn
+    ```
 
 The entire process of this experiment was implemented in Python 3.12.9.TabPFN requires Python 3.9+ due to newer language features. 
 * Compatible versions: 3.9, 3.10, 3.11, 3.12, 3.13.
-  For further details regarding the installation and configuration of TabPFN, please refer to [TabPFN](https://github.com/PriorLabs/TabPFN).
+For further details regarding the installation and configuration of TabPFN, please refer to [TabPFN](https://github.com/PriorLabs/TabPFN).
 
 # Workflow
 ***
-## 1.Dataset
+## 1. Dataset
 Our three experimental datasets are as follows:
 | Dataset | Resource|
 | --- | --- |
@@ -26,7 +26,7 @@ Our three experimental datasets are as follows:
 | CGL dataset | [Eigenvector Research](https://eigenvector.com/resources/data-sets/) |
 | Wheat dataset | [IDRC 2016](https://www.cnirs.org/content.aspx?page_id=86&club_id=409746) |
 
-## 2.Dataprocessing
+## 2. Dataprocessing
 We consolidates several commonly used spectral preprocessing and feature selection methods into a Python package.
 * Spectral Preprocessing:airPLS,MSC,SNV,Detrend,Derivative
 * Feature Selection:SPA,Univariate,UVE,RFE
@@ -48,30 +48,9 @@ An example of data processing：
     
     #Feature Selection
     X_train_rfe, X_test_rfe = rfe(X_train_de, y_train, X_test_de)
-    #!/usr/bin/env python3
-    print("Hello, World!");
     ```
-    
-    from feature import rfe
-    from process import derivative
-    
-    #Load the data
-    
-    ...Loading your sprectral data
-    
-    #Data partitioning
-    X_train, X_test, y_train, y_test = train_test_split(spectra, y, test_size=0.25, random_state=42, shuffle=True)
-    
-    #Spectral preprocessing
-    X_train_de = derivative(X_train)
-    X_test_de = derivative(X_test)
-    
-    #Feature Selection
-    X_train_rfe, X_test_rfe = rfe(X_train_de, y_train, X_test_de)
-    
 
-    
-## 3.Modelling and prediction
+## 3. Modelling and prediction
 NIRSpecPFN enables prediction of target values (chemical composition) on test sets without requiring hyperparameter tuning, utilising the train set of real spectral datasets as contextual information.
 An example of modelling and prediction：
 
