@@ -30,6 +30,7 @@ Our three experimental datasets are as follows:
 We consolidates several commonly used spectral preprocessing and feature selection methods into a Python package.
 * Spectral Preprocessing:airPLS, MSC, SNV, Detrend, Derivative
 * Feature Selection:SPA, Univariate, UVE, RFE  
+
 An example of data processing：
 
     ```python
@@ -51,7 +52,7 @@ An example of data processing：
     ```
 
 ## 3. Modelling and prediction
-NIRSpecPFN enables prediction of target values (chemical composition) on test sets without requiring hyperparameter tuning, utilising the train set of real spectral datasets as contextual information.
+NIRSpecPFN enables prediction of target values (chemical composition) on the test set without requiring hyperparameter tuning, utilising the train set of real spectral datasets as contextual information.
 An example of modelling and prediction：
 
 ```python
