@@ -7,7 +7,7 @@ We developed a method for Near-Infrared Spectral Analysis.This is a supervised m
 
 # Installation & Setup
 ***
-Official installation of TabPFN (pip)
+* Official installation of TabPFN (pip)
 
    pip install tabpfn
    
@@ -32,18 +32,23 @@ We consolidates several commonly used spectral preprocessing and feature selecti
 An example of data processing：
 
 
-    from process import derivative
-    from feature import rfe
+  from feature import rfe
+  from process import derivative
 
-    #Load the data
-    ...Loading your spectra data
-    #Data partitioning
-    X_train, X_test, y_train, y_test = train_test_split(spectra, y, test_size=0.25, random_state=42, shuffle=True)
-    #Spectral Preprocessing
-    X_train_de = derivative(X_train)
-    X_test_de = derivative(X_test)
-    #Feature Selection
-    X_train_rfe, X_test_rfe = rfe(X_train_de, y_train, X_test_de)
+  #Load the data
+  ...Loading your sprectral data
+  
+  #Data partitioning
+  X_train, X_test, y_train, y_test = train_test_split(spectra, y, test_size=0.25, random_state=42, shuffle=True)
+  
+  #Spectral preprocessing
+  X_train_de = derivative(X_train)
+  X_test_de = derivative(X_test)
+  
+  #Feature Selection
+  X_train_rfe, X_test_rfe = rfe(X_train_de, y_train, X_test_de)
+  
+
     
 ## 3.Modelling and prediction
 NIRSpecPFN enables prediction of target values (chemical composition) on test sets without requiring hyperparameter tuning, utilising the training set of real spectral datasets as contextual information.
