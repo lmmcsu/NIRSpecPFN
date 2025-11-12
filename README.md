@@ -32,7 +32,7 @@ We consolidates several commonly used spectral preprocessing and feature selecti
 * Spectral Preprocessing:airPLS, MSC, SNV, Detrend, Derivative
 * Feature Selection:SPA, Univariate, UVE, RFE  
 
-An example of data processing：  
+An example of data processing:
 
     ```python
     from process import derivative
