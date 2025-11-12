@@ -54,13 +54,16 @@ An example of data processing：
 NIRSpecPFN enables prediction of target values (chemical composition) on test sets without requiring hyperparameter tuning, utilising the train set of real spectral datasets as contextual information.
 An example of modelling and prediction：
 
+
     ```python
     from tabpfn import TabPFNRegressor
+    
     model = TabPFNRegressor(device=device, random_state=42, ignore_pretraining_limits=True)
+    
     model.fit(X_train_rfe, y_train)
     ```
 
-    
+  
 # Usage
 The example codes for usage is included in the example.ipynb
 
