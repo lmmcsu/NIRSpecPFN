@@ -14,7 +14,7 @@ We developed a method for Near-Infrared Spectral Analysis.This is a supervised m
     ```
 
 * Compatible versions: 3.9, 3.10, 3.11, 3.12, 3.13.
-The entire process of this experiment was implemented in Python 3.12.9.TabPFN requires Python 3.9+ due to newer language features. For further details regarding the installation and configuration of TabPFN, please refer to [TabPFN](https://github.com/PriorLabs/TabPFN).
+The entire process of this experiment was implemented in Python 3.12.9. TabPFN requires Python 3.9+ due to newer language features. For further details regarding the installation and configuration of TabPFN, please refer to [TabPFN](https://github.com/PriorLabs/TabPFN).
 
 # Workflow
 ***
@@ -54,10 +54,12 @@ An example of data processing：
 NIRSpecPFN enables prediction of target values (chemical composition) on test sets without requiring hyperparameter tuning, utilising the train set of real spectral datasets as contextual information.
 An example of modelling and prediction：
 
+    ```python
     from tabpfn import TabPFNRegressor
     
     model = TabPFNRegressor(device=device, random_state=42, ignore_pretraining_limits=True)
     model.fit(X_train_rfe, y_train)
+    ```
     
 # Usage
 The example codes for usage is included in the example.ipynb
