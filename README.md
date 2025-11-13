@@ -22,11 +22,11 @@ TabPFN requires Python 3.9+ due to newer language features. For further details 
 ***
 ## 1. Dataset
 Our three experimental datasets are as follows:
-| Dataset | Resource|
-| --- | --- |
-| Corn dataset | [Eigenvector Research](https://eigenvector.com/resources/data-sets/) |
-| CGL dataset | [Eigenvector Research](https://eigenvector.com/resources/data-sets/) |
-| Wheat dataset | [IDRC 2016](https://www.cnirs.org/content.aspx?page_id=86&club_id=409746) |
+|     Dataset     |     Resource    |
+|     ---     |     ---     |
+|     Corn dataset     |     [Eigenvector Research](https://eigenvector.com/resources/data-sets/)     |
+|     CGL dataset     |     [Eigenvector Research](https://eigenvector.com/resources/data-sets/)     |
+|     Wheat dataset     |     [IDRC 2016](https://www.cnirs.org/content.aspx?page_id=86&club_id=409746)     |
 
 ## 2. Dataprocessing
 We consolidates several commonly used spectral preprocessing and feature selection methods into a Python package.
@@ -66,8 +66,8 @@ model.fit(X_train_rfe, y_train)
 
 # Usage
 The example codes for usage is included in the [example.ipynb](example.ipynb).
-* [SHAP](SHAP_Analysis.py):for SHAP analysis
-* [corn](Corn.py), [CGL](CGL.py), [Wheat](Wheat.py):experiment codes
+* [SHAP_Analysis.py](SHAP_Analysis.py):for SHAP analysis
+* [Corn.py](Corn.py), [CGL.py](CGL.py), [Wheat.py](Wheat.py):experiment codes
 
 # Information of maintainers
 * zmzhang@csu.edu.cn
