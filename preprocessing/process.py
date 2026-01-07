@@ -17,10 +17,6 @@ def msc(X):
 def snv(X):
     return (X - np.mean(X, axis=1)[:, np.newaxis]) / np.std(X, axis=1)[:, np.newaxis]
 
-# ---- Detrend----
-def detrend(X, type='linear',axis=1):
-    return scipy_detrend(X, axis=axis, type=type)
-
 # ---- Derivative ----
 def derivative(X):
         derivative_X = np.zeros_like(X)
@@ -69,4 +65,5 @@ def airPLS(X, lam=100, porder=1, itermax=15):
             w[0] = w[-1] = np.exp(it * (d[neg].max()) / dssn)
         X_corr[i, :] = x - z
     return X_corr
+
 
