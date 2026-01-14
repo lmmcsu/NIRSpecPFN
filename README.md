@@ -1,10 +1,11 @@
 # NIRSpecPFN
 ***
-This is the code repo for the paper **Precise Modeling of Scarce Near-Infrared Spectral Data Based on TabPFN**.  
-We developed a method for Near-Infrared Spectral Analysis.This is a supervised machine learning approach based on the TabPFN, which is a Transformer-Based model.  
+This is the code repo for the paper **In-Context Learning with Prior-Data Fitted Networks for Accurate Nonlinear Modeling in Near-Infrared Spectroscopy**.  
+We developed a method for Near-Infrared Spectral quantitative analysis.This is a supervised machine learning approach based on the TabPFN-2.5, which is a Transformer-Based foundation model.  
 NIRSpecPFN strictly adheres to structured machine learning methodologies, with the framework integrating key steps such as data preprocessing, feature selection, and modeling prediction.
 
-<img width="1351" height="760" alt="屏幕截图 2025-11-13 223420" src="https://github.com/user-attachments/assets/91ff5457-85fc-4b5b-97e1-37e6962ff971" />
+![绘图_01](https://github.com/user-attachments/assets/ecb2033a-692e-4813-93b4-35be70949dbe)
+
 
 # Installation & Setup
 ***
@@ -25,7 +26,6 @@ Our three experimental datasets are as follows:
 |     Dataset     |     Resource    |
 |     ---     |     ---     |
 |     Corn dataset     |     [Eigenvector Research](https://eigenvector.com/resources/data-sets/)     |
-|     CGL dataset     |     [Eigenvector Research](https://eigenvector.com/resources/data-sets/)     |
 |     Wheat dataset     |     [IDRC 2016](https://www.cnirs.org/content.aspx?page_id=86&club_id=409746)     |
 
 ## 2. Dataprocessing
