@@ -17,12 +17,14 @@ TabPFN requires Python 3.9+ due to newer language features. For further details 
     ```
 * Download TabPFN-2.5 model weights
 
-Visit https://huggingface.co/Prior-Labs/tabpfn_2_5 and accept the license terms.
-
+    * Visit https://huggingface.co/Prior-Labs/tabpfn_2_5 and accept the license terms.
+    * File location
+      
     ```python
     # set your local cache directory here
-    os.environ.setdefault("TABPFN_MODEL_CACHE_DIR", r"D:\workspace\TabPFN\tabpfn") 
+    os.environ.setdefault("TABPFN_MODEL_CACHE_DIR", r"D:\workspace\TabPFN\tabpfn")
     ```
+
 # Workflow
 ***
 ## 1. Dataset
@@ -34,7 +36,7 @@ The experimental datasets are included in the [Datasets](Datasets/Introduction) 
 
 ## 2. Dataprocessing
 We consolidates several commonly used spectral preprocessing and feature selection methods into a Python package.
-* [Spectral Preprocessing](preprocessing/process.py):airPLS, MSC, SNV, S-G, First derivative 
+* [Spectral Preprocessing](preprocessing/process.py): airPLS, MSC, SNV, S-G, First derivative 
 
 An example of data processing：
 
@@ -46,25 +48,23 @@ from feature import rfe
 ...Loading your sprectral data
 
 #Data partitioning
-X_train, X_test, y_train, y_test = train_test_split(spectra, y, test_size=0.25, random_state=42, shuffle=True)
+X_support, X_query, y_support, y_query = train_test_split(spectra, y, test_size=0.2, random_state=42)
 
-#Spectral preprocessing
-X_train_de = derivative(X_train)
-X_test_de = derivative(X_test)
-
-#Feature Selection
-X_train_rfe, X_test_rfe = rfe(X_train_de, y_train, X_test_de)
+#Spectral processing
+X_support_deriv = derivative(X_support)
+X_query_deriv = derivative(X_query)
 ```
 
 ## 3. Modelling and prediction
-NIRSpecPFN enables prediction of target values (chemical composition) on the test set without requiring hyperparameter tuning, utilising the train set of real spectral datasets as contextual information.
+NIRSpecPFN enables prediction of target values (chemical composition) on the test set without requiring hyperparameter tuning, utilising the support set of real spectral datasets as contextual information.
 An example of modelling and prediction：
 
 ```python
 from tabpfn import TabPFNRegressor
 
-model = TabPFNRegressor(device=device, random_state=42, ignore_pretraining_limits=True)
-model.fit(X_train_rfe, y_train)
+model = load_local_tabpfn(kind="regressor", version="2.5", variant="real") 
+model.fit(X_support_deriv, y_support)
+preds = model.predict(X_query_deriv)
 ```
 
 # Usage
