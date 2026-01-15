@@ -42,7 +42,6 @@ An example of data processing：
 
 ```python
 from process import derivative
-from feature import rfe
 
 #Load the data
 ...Loading your sprectral data
@@ -62,6 +61,7 @@ An example of modelling and prediction：
 ```python
 from tabpfn import TabPFNRegressor
 
+# ICL and inference
 model = load_local_tabpfn(kind="regressor", version="2.5", variant="real") 
 model.fit(X_support_deriv, y_support)
 preds = model.predict(X_query_deriv)
@@ -69,8 +69,10 @@ preds = model.predict(X_query_deriv)
 
 # Usage
 The example codes for usage is included in the [example.ipynb](example.ipynb).
+
 * [SHAP_Analysis.py](SHAP_Analysis.py):for SHAP analysis
-* [Corn.py](Corn.py), [CGL.py](CGL.py), [Wheat.py](Wheat.py):experiment codes
+* Experimental codes: [Corn](corn NIRSpecPFN.py), [Wheat](wheat NIRSpecPFN.py)
+
 
 # Information of maintainers
 * zmzhang@csu.edu.cn
