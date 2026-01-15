@@ -10,10 +10,10 @@ This is the code repo for the paper **In-Context Learning with Prior-Data Fitted
 * We recommend to use pip. By using the [requirements.txt](requirements.txt) file, it will install all the required packages.
   
       ```python
-    git clone https://github.com/lmmcsu/NIRSpecPFN.git
+    pip install tabpfn    git clone https://github.com/lmmcsu/NIRSpecPFN.git
     cd NIRSpecPFN
     ```
-
+    
 * The entire process of this experiment was implemented in Python 3.12.9.
   TabPFN requires Python 3.9+ due to newer language features. For further details regarding the installation and configuration of TabPFN, please refer to [TabPFN](https://github.com/PriorLabs/TabPFN).
 
