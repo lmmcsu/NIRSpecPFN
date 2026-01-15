@@ -28,7 +28,7 @@ TabPFN requires Python 3.9+ due to newer language features. For further details 
 # Workflow
 ***
 ## 1. Dataset
-The experimental datasets are included in the [Datasets](Datasets/Introduction) and organized from public datasets
+The experimental datasets are included in the [Datasets](Datasets) and organized from public datasets
 |     Dataset     |     Resource    |
 |     ---     |     ---     |
 |     Corn dataset     |     [Eigenvector Research](https://eigenvector.com/resources/data-sets/)     |
