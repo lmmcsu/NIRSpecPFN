@@ -35,7 +35,7 @@ The experimental datasets are included in the [Datasets](Datasets) and organized
 |     Wheat dataset     |     [IDRC 2016](https://www.cnirs.org/content.aspx?page_id=86&club_id=409746)     |
 
 ## 2. Dataprocessing
-We consolidates several commonly used spectral preprocessing and feature selection methods into a Python package.
+We consolidates several commonly used spectral preprocessing methods into a Python package.
 * [Spectral Preprocessing](preprocessing/process.py): airPLS, MSC, SNV, S-G, First derivative 
 
 An example of data processing：
