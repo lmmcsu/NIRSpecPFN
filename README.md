@@ -78,9 +78,6 @@ The example codes for usage is included in the [example.ipynb](example.ipynb).
 
 * Regression performance: [Corn](corn), [Wheat](wheat)
 * Relative analysis: [analysis](analysis)
-  * ba:[Bayesian Signed-Rank Test](analysis/Bayesian Signed-Rank Test.ipynb)
-  * 
-
 
 # Information of maintainers
 * zmzhang@csu.edu.cn
