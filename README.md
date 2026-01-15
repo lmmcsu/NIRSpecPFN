@@ -1,28 +1,32 @@
 # NIRSpecPFN
 ***
-This is the code repo for the paper **In-Context Learning with Prior-Data Fitted Networks for Accurate Nonlinear Modeling in Near-Infrared Spectroscopy**.  
-We developed a method for Near-Infrared Spectral quantitative analysis.This is a supervised machine learning approach based on the TabPFN-2.5, which is a Transformer-Based foundation model.  
-NIRSpecPFN strictly adheres to structured machine learning methodologies, with the framework integrating key steps such as data preprocessing, feature selection, and modeling prediction.
+This is the code repo for the paper **In-Context Learning with Prior-Data Fitted Networks for Accurate Nonlinear Modeling in Near-Infrared Spectroscopy**. We developed a method for Near-Infrared Spectral quantitative analysis.This is a efficient approach based on the TabPFN-2.5, which is a Transformer-Based foundation model. NIRSpecPFN comprises three key steps: spectral processing, context preparation, and in-context learning.
 
 ![绘图_01](https://github.com/user-attachments/assets/ecb2033a-692e-4813-93b4-35be70949dbe)
 
 
 # Installation & Setup
 ***
+* The entire process of this experiment was implemented in Python 3.12.9.  
+TabPFN requires Python 3.9+ due to newer language features. For further details regarding the installation and configuration of TabPFN, please refer to [TabPFN](https://github.com/PriorLabs/TabPFN).
+
 * Official installation of TabPFN (pip)
 
     ```python
     pip install tabpfn
     ```
+* Download TabPFN-2.5 model weights
 
-* Compatible versions: 3.9, 3.10, 3.11, 3.12, 3.13.
-The entire process of this experiment was implemented in Python 3.12.9.  
-TabPFN requires Python 3.9+ due to newer language features. For further details regarding the installation and configuration of TabPFN, please refer to [TabPFN](https://github.com/PriorLabs/TabPFN).
+Visit https://huggingface.co/Prior-Labs/tabpfn_2_5 and accept the license terms.
 
+    ```python
+    # set your local cache directory here
+    os.environ.setdefault("TABPFN_MODEL_CACHE_DIR", r"D:\workspace\TabPFN\tabpfn") 
+    ```
 # Workflow
 ***
 ## 1. Dataset
-Our three experimental datasets are as follows:
+The experimental datasets are included in the [Datasets](Datasets/Introduction) and Organized from public datasets
 |     Dataset     |     Resource    |
 |     ---     |     ---     |
 |     Corn dataset     |     [Eigenvector Research](https://eigenvector.com/resources/data-sets/)     |
@@ -30,8 +34,7 @@ Our three experimental datasets are as follows:
 
 ## 2. Dataprocessing
 We consolidates several commonly used spectral preprocessing and feature selection methods into a Python package.
-* [Spectral Preprocessing](preprocessing/process.py):airPLS, MSC, SNV, Detrend, Derivative
-* [Feature Selection](preprocessing/feature.py):SPA, Univariate, UVE, RFE  
+* [Spectral Preprocessing](preprocessing/process.py):airPLS, MSC, SNV, S-G, First derivative 
 
 An example of data processing：
 
