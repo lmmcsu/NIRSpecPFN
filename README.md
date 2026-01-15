@@ -28,7 +28,7 @@ TabPFN requires Python 3.9+ due to newer language features. For further details 
 # Workflow
 ***
 ## 1. Dataset
-The experimental datasets are included in the [Datasets](Datasets/Introduction) and Organized from public datasets
+The experimental datasets are included in the [Datasets](Datasets/Introduction) and organized from public datasets
 |     Dataset     |     Resource    |
 |     ---     |     ---     |
 |     Corn dataset     |     [Eigenvector Research](https://eigenvector.com/resources/data-sets/)     |
@@ -71,7 +71,7 @@ preds = model.predict(X_query_deriv)
 The example codes for usage is included in the [example.ipynb](example.ipynb).
 
 * [SHAP_Analysis.py](SHAP_Analysis.py):for SHAP analysis
-* Experimental codes: [Corn](corn NIRSpecPFN.py), [Wheat](wheat NIRSpecPFN.py)
+* Experimental codes: [Corn](corn), [Wheat](wheat)
 
 
 # Information of maintainers
