@@ -70,8 +70,8 @@ preds = model.predict(X_query_deriv)
 # Usage
 The example codes for usage is included in the [example.ipynb](example.ipynb).
 
-* [SHAP_Analysis.py](SHAP_Analysis.py):for SHAP analysis
-* Experimental codes: [Corn](corn), [Wheat](wheat)
+* Regression performance: [Corn](corn), [Wheat](wheat)
+* Relative analysis: [analysis](analysis)
 
 
 # Information of maintainers
