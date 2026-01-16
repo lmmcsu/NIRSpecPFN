@@ -8,6 +8,13 @@ from sklearn.cross_decomposition import PLSRegression
 from sklearn.svm import SVR
 import matplotlib.pyplot as plt
 from tabpfn import TabPFNRegressor
+import sys
+
+# Add project root directory to Python path
+current_dir = os.path.dirname(os.path.abspath(__file__))  # current directory
+project_root = os.path.dirname(current_dir)               # relative directory
+sys.path.insert(0, project_root)                         # Add to search path
+# Load processing function
 from preprocessing.process import (msc, snv, derivative, savitzky_golay, airPLS)
 plt.rcParams.update({'font.size': 14})
 
@@ -224,5 +231,6 @@ plt.legend()
 plt.title("Learning Curve")
 plt.tight_layout()
 plt.show()
+
 
 
