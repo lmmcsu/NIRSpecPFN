@@ -6,6 +6,12 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, root_mean_s
 from sklearn.model_selection import KFold, train_test_split
 import matplotlib.pyplot as plt
 from tabpfn import TabPFNRegressor, TabPFNClassifier
+import sys
+
+# Add project root directory to Python path
+current_dir = os.path.dirname(os.path.abspath(__file__))  # current directory
+project_root = os.path.dirname(current_dir)               # relative directory
+sys.path.insert(0, project_root)                         # Add to search path
 
 # Preprocessing functions
 from preprocessing.process import (msc, snv, derivative, savitzky_golay, airPLS)
@@ -237,3 +243,4 @@ plt.title(f"True vs Predicted (Best preprocessing = {last_run_best_method})")
 plt.legend()
 plt.grid(True)
 plt.show()
+
