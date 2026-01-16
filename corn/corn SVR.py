@@ -4,6 +4,14 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, root_mean_s
 from sklearn.model_selection import KFold, train_test_split, GridSearchCV
 from sklearn.svm import SVR
 import matplotlib.pyplot as plt
+
+import os
+import sys
+
+# Add project root directory to Python path
+current_dir = os.path.dirname(os.path.abspath(__file__))  # current directory
+project_root = os.path.dirname(current_dir)               # relative directory
+sys.path.insert(0, project_root)                         # Add to search path
 from preprocessing.process import (msc, snv, derivative, savitzky_golay, airPLS)
 
 # ==============================================================
@@ -88,9 +96,9 @@ last_run_best_method = None
 last_run_y_train = None
 last_run_y_test = None
 
-for run in range(1, 46):
+for run in range(1, 6):
     print(f"\n\n==========================")
-    print(f"   RUN {run} / 45")
+    print(f"   RUN {run} / 5")
     print(f"==========================\n")
 
     X_train, X_test, y_train, y_test = train_test_split(
@@ -234,3 +242,4 @@ plt.title(f"SVR — True vs Predicted (Best preprocessing = {last_run_best_metho
 plt.legend()
 plt.grid(True)
 plt.show()
+
