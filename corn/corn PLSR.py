@@ -90,7 +90,7 @@ last_run_y_test = None
 
 for run in range(1, 5):
     print(f"\n\n==========================")
-    print(f"   RUN {run} / 45")
+    print(f"   RUN {run} / 5")
     print(f"==========================\n")
 
     # Split train/test with different seeds
@@ -233,6 +233,7 @@ plt.title(f"PLSR — True vs Predicted (Best preprocessing = {last_run_best_meth
 plt.legend()
 plt.grid(True)
 plt.show()
+
 
 
 
