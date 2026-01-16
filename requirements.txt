@@ -8,5 +8,4 @@ ipykernel==6.29.0
 baycomp==1.0.3
 pygam==0.10.1
 matplotlib==3.7.0
-
 openpyxl>=3.1.0
