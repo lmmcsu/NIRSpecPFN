@@ -14,12 +14,6 @@ This is the code repo for the paper **In-Context Learning with Prior-Data Fitted
     cd NIRSpecPFN
     ```
 * The NIRSpecPFN requires Python 3.9+. For further details regarding the installation and configuration of TabPFN, please refer to [TabPFN](https://github.com/PriorLabs/TabPFN).
-
-* Official installation of TabPFN (pip)
-
-    ```python
-    pip install tabpfn
-    ```
 * Download TabPFN-2.5 model weights
 
     * Visit https://huggingface.co/Prior-Labs/tabpfn_2_5 and accept the license terms.
