@@ -215,7 +215,7 @@ svr_mean, svr_ci = mean_ci(svr_r)
 
 plt.figure(figsize=(10, 6))
 
-plt.plot(train_sizes, tab_mean, marker="o", label="TabPFN")
+plt.plot(train_sizes, tab_mean, marker="o", label="NIRSpecPFN")
 plt.fill_between(train_sizes, tab_mean - tab_ci, tab_mean + tab_ci, alpha=0.2)
 
 plt.plot(train_sizes, pls_mean, marker="s", label="PLSR")
@@ -231,6 +231,7 @@ plt.legend()
 plt.title("Learning Curve")
 plt.tight_layout()
 plt.show()
+
 
 
 
