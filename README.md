@@ -2,7 +2,8 @@
 ***
 This is the code repo for the paper **In-Context Learning with Prior-Data Fitted Networks for Accurate Nonlinear Modeling in Near-Infrared Spectroscopy**. We developed a method for Near-Infrared Spectral quantitative analysis.This is a efficient approach based on the TabPFN-2.5, which is a Transformer-Based foundation model. NIRSpecPFN comprises three key steps: spectral processing, context preparation, and in-context learning.
 
-![绘图_01](https://github.com/user-attachments/assets/ecb2033a-692e-4813-93b4-35be70949dbe)
+<img width="5999" height="5843" alt="Fig  1" src="https://github.com/user-attachments/assets/4c1ae41a-896f-42ce-94f3-7029f5ce46b6" />
+
 
 
 # Installation & Setup
