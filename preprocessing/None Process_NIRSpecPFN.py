@@ -75,15 +75,6 @@ print("\nRunning TabPFN without any preprocessing...")
 # spectra = df.iloc[:, 2:743].values
 # y = df.iloc[:, 1].values
 
-# corn
-# data_path = "D:/A/CSU/NIRdatasets/corn_xlsl/m5_corn.xlsx"
-# spectra = df.iloc[:, :700].values
-# y = df.iloc[:, 701].values
-# Moisture:y = df.iloc[:, 700].values
-# Protein:y = df.iloc[:, 701].values
-# Oil:y = df.iloc[:, 702].values
-# Starch:y = df.iloc[:, 703].values
-
 # ==============================================================
 # Run 5 repetitions with different train/test splits
 # ==============================================================
