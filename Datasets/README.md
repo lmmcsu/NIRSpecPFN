@@ -1,19 +1,6 @@
 # Dataset Information
 
-This repository includes two datasets in Excel format for near-infrared spectroscopy experiments:
+This repository includes three datasets in Excel format for near-infrared spectroscopy experiments:
 
-## Corn Dataset
+<img width="883" height="269" alt="image" src="https://github.com/user-attachments/assets/cc9f1284-f999-462b-bc86-de87b648ec88" />
 
-- **File**: `m5_corn.excel`
-- Contains spectral data for corn samples
-
-## Wheat Dataset
-
-The wheat dataset consists of four instrument variations (A1, A2, A3, A4), provided in the following files:
-
-- A1 : `Cal_ManufactureA1.excel`
-- A2 : `Cal_ManufactureA2.excel`
-- A3 : `Cal_ManufactureA3.excel`
-- A4 : `Test_ManufactureA.excel`
-
-Each file corresponds to a specific instrument manufacturer configuration used in the wheat analysis experiments.
