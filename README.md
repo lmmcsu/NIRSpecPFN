@@ -30,14 +30,11 @@ This is the code repo for the paper **In-Context Learning with Prior-Data Fitted
 ***
 ## 1. Dataset
 The experimental datasets are included in the [Datasets](Datasets) and organized from public datasets
-|     Dataset     |     Resource    |
-|     ---     |     ---     |
-|     Corn dataset     |     [Eigenvector Research](https://eigenvector.com/resources/data-sets/)     |
-|     Wheat dataset     |     [IDRC 2016](https://www.cnirs.org/content.aspx?page_id=86&club_id=409746)     |
+<img width="909" height="292" alt="image" src="https://github.com/user-attachments/assets/f820f751-c693-4b14-9548-b1b38c374da7" />
 
 ## 2. Dataprocessing
 We consolidates several commonly used spectral preprocessing methods into a Python package.
-* [Spectral Preprocessing](preprocessing/process.py): airPLS, MSC, SNV, S-G, First derivative 
+* [Spectral Preprocessing](preprocessing/process.py): airPLS, MSC, SNV, SG, First derivative, SG-2D 
 
 An example of data processing：
 
@@ -71,8 +68,8 @@ preds = model.predict(X_query_deriv)
 # Usage
 The example codes for usage is included in the [example.ipynb](example.ipynb).
 
-* Regression performance: [Corn](corn), [Wheat](wheat)
-* Relative analysis: [analysis](analysis)
+* Regression performance: [Soil](soil), [Wheat](wheat), [Tecator](tecator)
+* Relative analysis: [Analysis](analysis)
 
 # Information of maintainers
 * zmzhang@csu.edu.cn
