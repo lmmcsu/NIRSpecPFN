@@ -29,6 +29,10 @@ def derivative(X):
 
 
 # ---- Savitzky-Golay----
+def savitzky_golay(X, window_length=11, polyorder=2, deriv=0, axis=1):
+    return savgol_filter(X, window_length=window_length, polyorder=polyorder, deriv=deriv, axis=axis)
+
+# ---- SG-2D----
 def savitzky_golay(X, window_length=11, polyorder=2, deriv=2, axis=1):
     return savgol_filter(X, window_length=window_length, polyorder=polyorder, deriv=deriv, axis=axis)
 
