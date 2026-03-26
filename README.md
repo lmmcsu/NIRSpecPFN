@@ -30,7 +30,8 @@ This is the code repo for the paper **In-Context Learning with Prior-Data Fitted
 ***
 ## 1. Dataset
 The experimental datasets are included in the [Datasets](Datasets) and organized from public datasets
-<img width="909" height="292" alt="image" src="https://github.com/user-attachments/assets/f820f751-c693-4b14-9548-b1b38c374da7" />
+<img width="3046" height="770" alt="Data" src="https://github.com/user-attachments/assets/d38c7948-16cc-46d3-9f34-522271af1b71" />
+
 
 ## 2. Dataprocessing
 We consolidates several commonly used spectral preprocessing methods into a Python package.
