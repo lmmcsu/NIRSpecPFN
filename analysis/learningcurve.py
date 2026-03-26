@@ -168,9 +168,9 @@ def run_single_model_learning_curve(model_name, X_train, y_train, X_test, y_test
 # Load data
 # ==============================================================
 
-df = pd.read_excel("D:/A/CSU/NIRdatasets/wheat/Cal_ManufacturerA3.xlsx")
-spectra = df.iloc[:, 2:743].values
-y = df.iloc[:, 1].values
+df = pd.read_excel("D:/A/CSU/NIRdatasets/wheat/A1.xlsx") #A1, A2, A3, A4
+spectra = df.iloc[:, 1:742].values
+y = df.iloc[:, -1].values
 
 X_train, X_test, y_train, y_test = train_test_split(spectra, y, test_size=0.2, random_state=42)
 
