@@ -30,7 +30,8 @@ This is the code repo for the paper **In-Context Learning with Prior-Data Fitted
 ***
 ## 1. Dataset
 The experimental datasets are included in the [Datasets](Datasets) and organized from public datasets
-<img width="3046" height="770" alt="Data" src="https://github.com/user-attachments/assets/d38c7948-16cc-46d3-9f34-522271af1b71" />
+<img width="1269" height="401" alt="image" src="https://github.com/user-attachments/assets/4d9cbe2c-b960-4200-b64f-211a52cae722" />
+
 
 
 ## 2. Dataprocessing
