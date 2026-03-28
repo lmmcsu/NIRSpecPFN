@@ -28,7 +28,6 @@ all_preprocessing_sheets = [
     "Raw",
     "MSC",
     "SNV",
-    "First Derivative",
     "SG-2D",
     "airPLS"
 ]
