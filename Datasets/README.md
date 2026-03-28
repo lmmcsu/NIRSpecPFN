@@ -2,7 +2,8 @@
 
 This repository includes three datasets in Excel format for near-infrared spectroscopy experiments:
 
-<img width="3046" height="770" alt="Data" src="https://github.com/user-attachments/assets/3d5cc986-eb27-493f-aa00-c68056691a42" />
+<img width="1269" height="401" alt="image" src="https://github.com/user-attachments/assets/f892d6f1-c802-47b9-83d3-30f986073899" />
+
 
 
 
