@@ -19,7 +19,7 @@ warnings.filterwarnings("ignore", category=RuntimeWarning, module="tabpfn.*")
 file_path = r"D:\A\CSU\NIRdatasets\tecator\preprocessed_tecator.xlsx"
 tabpfn_cache_dir = r"D:\workspace\TabPFN\tabpfn"
 
-# Available Sheets: "Raw", "MSC", "SNV", "First Derivative", "SG-2D", "airPLS", "all"
+# Available Sheets: "Raw", "MSC", "SNV", "SG-2D", "airPLS", "all"
 selected_sheet = "all"
 target_property = "moisture"  # moisture，fat，protein
 selection_mode = "per_model"  
@@ -27,7 +27,6 @@ all_preprocessing_sheets = [
     "Raw",
     "MSC",
     "SNV",
-    "First Derivative",
     "SG-2D",
     "airPLS"
 ]
