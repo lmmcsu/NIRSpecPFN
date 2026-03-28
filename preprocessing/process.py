@@ -16,18 +16,7 @@ def msc(X):
 # ---- SNV----
 def snv(X):
     return (X - np.mean(X, axis=1)[:, np.newaxis]) / np.std(X, axis=1)[:, np.newaxis]
-
-# ---- Derivative ----
-def derivative(X):
-        derivative_X = np.zeros_like(X)
-        for i in range(X.shape[0]):
-            derivative_X[i, 0] = X[i, 1] - X[i, 0] 
-            for j in range(1, X.shape[1] - 1):
-                derivative_X[i, j] = (X[i, j + 1] - X[i, j - 1]) / 2  
-            derivative_X[i, -1] = X[i, -1] - X[i, -2]  
-        return derivative_X
-
-
+        
 # ---- Savitzky-Golay----
 def savitzky_golay(X, window_length=11, polyorder=2, deriv=0, axis=1):
     return savgol_filter(X, window_length=window_length, polyorder=polyorder, deriv=deriv, axis=axis)
