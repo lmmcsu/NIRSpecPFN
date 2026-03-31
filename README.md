@@ -38,7 +38,7 @@ The experimental datasets are included in the [Datasets](Datasets) and organized
 
 ## 2. Dataprocessing
 We consolidates several commonly used spectral preprocessing methods into a Python package.
-* [Spectral Preprocessing](preprocessing/process.py): airPLS, MSC, SNV, SG, First derivative, SG-2D 
+* [Spectral Preprocessing](preprocessing/process.py): airPLS, MSC, SNV, SG, SG-2D 
 
 An example of data processing：
 
